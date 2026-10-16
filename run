@@ -1,0 +1,6 @@
+cd C:\Redis
+redis-server.exe redis.windows.conf
+set DJANGO_SETTINGS_MODULE=config.settings.development
+python manage.py runserver
+set DJANGO_SETTINGS_MODULE=config.settings.development
+celery -A config worker -l info --pool=solo
